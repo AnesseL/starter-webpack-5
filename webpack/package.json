@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/AnesseL/starter-webpack-5#readme",
   "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
     "html-webpack-plugin": "^5.5.1",
     "webpack": "^5.84.1",
     "webpack-cli": "^5.1.1",
