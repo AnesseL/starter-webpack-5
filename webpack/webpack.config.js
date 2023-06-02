@@ -19,7 +19,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i, 
-        use: [ "style-loader", "css-loader"],
+        use: [ "style-loader", "css-loader", "postcss-loader"],
       },
       {
         test: /\.s[ac]ss$/i,
@@ -39,6 +39,18 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               implementation: require('sass'), // Prefer `dart-sass`
+            },
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+                postcssOptions: {
+                    plugins: [
+                        [
+                            "autoprefixer",
+                        ],
+                    ],
+                },
             },
           }, 
         ],

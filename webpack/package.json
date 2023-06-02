@@ -28,10 +28,16 @@
     "url": "https://github.com/AnesseL/starter-webpack-5/issues"
   },
   "homepage": "https://github.com/AnesseL/starter-webpack-5#readme",
+  "browserslist": [
+    "defaults"
+  ],
   "devDependencies": {
+    "autoprefixer": "^10.4.14",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.8.1",
     "html-webpack-plugin": "^5.5.1",
+    "postcss": "^8.4.24",
+    "postcss-loader": "^7.3.2",
     "sass": "^1.62.1",
     "sass-loader": "^13.3.1",
     "style-loader": "^3.3.3",
