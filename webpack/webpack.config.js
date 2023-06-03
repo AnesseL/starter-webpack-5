@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 const path = require('path');
 
 module.exports = {
@@ -7,7 +8,7 @@ module.exports = {
   entry: path.resolve(__dirname, '../src/javascript/index.js'),
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: 'bundle.js',
+    filename: 'bundle.min.js',
   },
   devtool: "source-map",
   devServer: {
@@ -69,6 +70,14 @@ module.exports = {
       }
     ],
   },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        test: /\.m?js(\?.*)?$/i,
+      }),
+    ],
+  },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
@@ -79,6 +88,6 @@ module.exports = {
         from: "../src/images",
         to: "../dist/images"
       }],
-    })
+    }),
   ]
 };
