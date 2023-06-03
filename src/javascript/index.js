@@ -1,3 +1,9 @@
+import { showParagraph } from './app';
+showParagraph();
+
+import { checkFunction } from "./app";
+checkFunction();
+
 import "../scss/main.scss";
 
 // document.querySelector("h1").style.color = "#00FFFF";

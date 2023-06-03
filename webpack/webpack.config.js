@@ -1,5 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const  CopyPlugin  =  require ( "copy-webpack-plugin" );
+const CopyPlugin = require("copy-webpack-plugin");
 const path = require('path');
 
 module.exports = {
@@ -9,7 +9,7 @@ module.exports = {
     path: path.resolve(__dirname, '../dist'),
     filename: 'bundle.js',
   },
-  devtool: "source-map", 
+  devtool: "source-map",
   devServer: {
     static: path.resolve(__dirname, '../dist'),
     compress: true,
@@ -19,15 +19,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/i, 
-        use: [ "style-loader", "css-loader", "postcss-loader"],
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader", "postcss-loader"],
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [
-          {
-           // Creates `style` nodes from JS strings (plugin instead of "style-loader")
-            loader:  "style-loader",
+        use: [{
+            // Creates `style` nodes from JS strings (plugin instead of "style-loader")
+            loader: "style-loader",
             options: {}
           },
           {
@@ -45,17 +44,29 @@ module.exports = {
           {
             loader: "postcss-loader",
             options: {
-                postcssOptions: {
-                    plugins: [
-                        [
-                            "autoprefixer",
-                        ],
-                    ],
-                },
+              postcssOptions: {
+                plugins: [
+                  [
+                    "autoprefixer",
+                  ],
+                ],
+              },
             },
-          }, 
+          },
         ],
       },
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              ['@babel/preset-env', { targets: "defaults" }]
+            ]
+          }
+        }
+      }
     ],
   },
   plugins: [
@@ -64,9 +75,10 @@ module.exports = {
       template: '../src/index.html'
     }),
     new CopyPlugin({
-      patterns: [
-        { from: "../src/images", to: "../dist/images" }
-      ],
+      patterns: [{
+        from: "../src/images",
+        to: "../dist/images"
+      }],
     })
   ]
 };
