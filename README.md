@@ -83,5 +83,7 @@ npm run prod # (Production)
 npm run serve # (Live server)
 ```
 
+![alt text](https://github.com/AnesseL/starter-webpack-5/workfolder/graphics/finish-project-starter-webpack-5-folders-files.webp)
+![alt text](https://github.com/AnesseL/starter-webpack-5/blob/main/workfolder/graphics/finish-project-starter-webpack-5-folders-files.webp)
 ---
 Have fun at work and have nice day!
