@@ -58,7 +58,7 @@ https://github.com/AnesseL/starter-webpack-5
 Code > Download ZIP > Extract files
 
 ```bash
-code . [comment]: # (for Visual Studio Code )
+code . # (for Visual Studio Code )
 ```
 Installed webpack configurator:
 
@@ -71,16 +71,16 @@ npm install
 ```
 
 ```bash
-npm run dev [comment]: # (Development)
+npm run dev # (Development)
 ```
 ```bash
-npm run watch [comment]: # (Tracking)
+npm run watch # (Tracking)
 ```
 ```bash
-npm run prod [comment]: # (Production)
+npm run prod # (Production)
 ```
 ```bash
-npm run serve [comment]: # (Live server)
+npm run serve # (Live server)
 ```
 
 ---
